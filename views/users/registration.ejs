@@ -1,0 +1,36 @@
+<% include("../layout/header.ejs") %>
+
+<h1 style="text-align: center; font-family: Arial, sans-serif; color: #333;">User Registration Form</h1>
+
+<form action="/register" method="post" enctype="multipart/form-data" style="width: 400px; margin: 50px auto; padding: 20px; background-color: #f7f7f7; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+    
+
+     <% if (typeof message !== 'undefined') { %>
+    <p style="color: green; text-align: center;"><%= message %></p>
+     <% } %>
+    <input type="text" name="name" placeholder="Enter Name" required
+           style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+    
+    <input type="email" name="email" placeholder="Enter Email" required
+           style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+    
+    <input type="text" name="mno" placeholder="Enter Mobile Number" required
+           style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+
+    <label for="image" style="font-size: 14px; color: #333; display: block; margin: 10px 0;">Upload Profile Image:</label>
+    <input type="file" name="image" required
+           style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+    
+    <input type="password" name="password" placeholder="Enter Password" required
+           style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+    
+    <input type="submit" required
+           style="width: 100%; background-color: #28a745; color: white; padding: 10px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+    
+    <br><br>
+    <a href="/login" style="text-align: center; display: block; color: #007bff;">Already a user? Login</a>
+</form>
+
+
+
+<% include("../layout/footer.ejs") %>

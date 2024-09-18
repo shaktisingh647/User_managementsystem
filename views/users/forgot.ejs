@@ -1,0 +1,45 @@
+<% include('../layout/header.ejs') %>
+
+<div style="width: 90%; max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h1 style="font-family: Arial, sans-serif; color: #333;">Forgot Password</h1>
+    
+    <% 
+    if(typeof message !== 'undefined'){ %>
+        <h4 style="color: #e74c3c; margin-bottom: 20px;"><%= message %></h4>
+    <% } %>
+
+    <form action="/forgot" method="post" style="display: flex; flex-direction: column; align-items: center;">
+        <input type="email" name="email" placeholder="Enter Email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+        <input type="submit" value="Send Reset Link" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+    </form>
+</div>
+
+<% include('../layout/footer.ejs') %>
+
+<!-- Responsive Styling -->
+<style>
+    @media (max-width: 768px) {
+        div {
+            width: 95%;
+        }
+        form input {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 480px) {
+        div {
+            width: 100%;
+            padding: 10px;
+        }
+        form input {
+            font-size: 12px;
+            padding: 8px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 14px;
+        }
+    }
+</style>

@@ -1,0 +1,48 @@
+<% include('../layout/header.ejs') %>
+
+<div style="width: 90%; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+    <div style="text-align: center;">
+        <img src="userImages/<%= user.image%>" width="110" height="120px" alt="<%= user.image%>" style="border-radius: 50%; margin-bottom: 20px;">
+    </div>
+    <form action="" method="post" enctype="multipart/form-data" style="text-align: center;">
+        <input type="file" name="image" style="display: block; margin: 10px auto; padding: 5px; border-radius: 5px;">
+        <input type="hidden" name="user_id" value="<%= user._id%>">
+
+        <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required style="width: 80%; padding: 10px; margin: 10px auto; border-radius: 5px; border: 1px solid #ccc;">
+        <br>
+        <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required style="width: 80%; padding: 10px; margin: 10px auto; border-radius: 5px; border: 1px solid #ccc;">
+        <br>
+        <input type="text" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile" required style="width: 80%; padding: 10px; margin: 10px auto; border-radius: 5px; border: 1px solid #ccc;">
+        <br><br>
+        <input type="submit" value="Update Profile" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+    </form>
+</div>
+
+<% include('../layout/footer.ejs') %>
+
+<!-- Inline CSS for responsiveness -->
+<style>
+    @media (max-width: 768px) {
+        div {
+            width: 95%;
+        }
+        input[type="text"], input[type="email"] {
+            width: 90%;
+        }
+    }
+    @media (max-width: 480px) {
+        div {
+            padding: 10px;
+        }
+        img {
+            width: 80px;
+            height: 90px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 95%;
+        }
+        input[type="submit"] {
+            width: 100%;
+        }
+    }
+</style>
