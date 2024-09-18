@@ -1,4 +1,4 @@
-const { compareSync } = require('bcrypt');
+const { compareSync } = require('bcryptjs');
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoute = require("./routes/userRoute")
