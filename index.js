@@ -2,9 +2,9 @@ const { compareSync } = require('bcrypt');
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoute = require("./routes/userRoute")
-const PORT=3000;
+const config = require("./config/config")
 
-mongoose.connect("mongodb://localhost:27017/user_management").then(
+mongoose.connect(config.MONGO_URL).then(
     console.log(" succesfully connected to db ")
 ).catch(err=>{
     console.err("Error connecting to DB:",err);
@@ -13,7 +13,7 @@ mongoose.connect("mongodb://localhost:27017/user_management").then(
 const app = express();
 app.use(express.json());
 app.use("/",userRoute);
-app.listen(PORT,()=>{
-    console.log(`server is listening on port ${PORT}`);
+app.listen(config.PORT || 8088,()=>{
+    console.log(`server is listening on port ${config.PORT || 8088}`);
 })
 
