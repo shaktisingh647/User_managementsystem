@@ -7,7 +7,7 @@ const config = require("./config/config")
 mongoose.connect(config.MONGO_URL).then(
     console.log(" succesfully connected to db ")
 ).catch(err=>{
-    console.err("Error connecting to DB:",err);
+    console.log("Error connecting to DB:",err);
 });
 
 const app = express();
