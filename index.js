@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const userRoute = require("./routes/userRoute")
 const config = require("./config/config")
 
-mongoose.connect(config.MONGO_URL).then(
-    console.log(" succesfully connected to db ")
-).catch(err=>{
-    console.log("Error connecting to DB:",err);
-});
+mongoose.connect(config.MONGO_URL)
+  .then(() => {
+    console.log("Successfully connected to MongoDB Atlas");
+  })
+  .catch(err => {
+    console.error("Error connecting to MongoDB Atlas:", err);
+  });
 
 const app = express();
 app.use(express.json());
