@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const userRoute = require("./routes/userRoute")
 const config = require("./config/config")
 
-mongoose.connect("mongodb://localhost:27017/user_management").then(
+mongoose.connect(config.MONGO_URL).then(
     console.log(" succesfully connected to db ")
 ).catch(err=>{
     console.log("Error connecting to DB:",err);
